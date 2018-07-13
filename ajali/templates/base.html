@@ -1,0 +1,78 @@
+{%load staticfiles %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mapping Accidents in kenya.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'js/plugins/leaflet/leaflet.css'%}">
+    <link href="{% static 'js/plugins/L.Control.Sidebar.css'%}"/>
+    <link href="{% static 'js/plugins/MarkerCluster.css'%}"/>
+    <link rel="stylesheet" href="{% static 'js/routing/dist/leaflet-routing-machine.css'%}" />
+     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" /> 
+    
+    {% comment %} <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' /> {% endcomment %}
+    
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'index'%}" style="color:orange">Mapping Accidents In kenya</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#" style="color:orange">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color:orange">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'report'%}" style="color:orange">Report</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/chart" style="color:orange">charts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin" style="color:orange">Admin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    {% block content %}
+
+    {% endblock %}
+    {% comment %} <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script> {% endcomment %}
+    <script src="{% static 'js/jquery.js'%}"></script>
+    <script src="{% static 'js/popper.js'%}"></script>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/plugins/leaflet/leaflet.js'%}"></script>
+    <script src="{% static 'js/highcharts.js'%}"></script>
+    <script src="{% static 'js/plugins/leaflet.ajax.min.js'%}"></script>
+    <script src="{% static 'js/plugins/L.Control.Sidebar.js'%}"></script>
+    <script src="{% static 'js/plugins/leaflet.markercluster.js'%}"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>  
+    <script src="{% static 'js/turf.min.js'%}"></script>
+{% comment %} 
+    <script src="{% static 'js/routing/dist/leaflet-routing-machine.js'%}"></script>
+    <script src="{% static 'js/routing/dist/Control.Geocoder.js'%}"></script>
+    <script src="{% static 'js/routing/dist/config.js'%}"></script>
+
+    {% endcomment %}
+
+    <script src="{% static 'js/map.js'%}"></script>
+    <script src="{% static 'js/AnimatedMarker.js'%}"></script>
+    <script src="{% static 'js/report.js'%}"></script>
+    <script src="{% static 'js/charts.js'%}"></script>
+</body>
+</html>

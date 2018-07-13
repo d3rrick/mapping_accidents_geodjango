@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top: 10vh">
+  {% if message %}
+  {{message}}
+  {% else %}
+  {% endif %}
+  <form action="{% url 'report' %}" method="post">{% csrf_token %}
+      <div class="form-group">
+        <label for="cause">Cause</label>
+        <input type="text" name="cause" class="form-control" id="cause" placeholder="possible cause." required>
+      </div>
+      <div class="form-group">
+        <label for="when">When?</label>
+        <input type="date" name="when" class="form-control" id="when" placeholder="Example input" required>
+        {% comment %} <input type="datetime-local"
+        name="party-time" value="2018-06-12T19:30"
+        min="2018-06-07T00:00" max="2018-06-14T00:00" name="when" class="form-control" id="when"/> {% endcomment %}
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Location</label>
+        <div id='rmap' style="height: 400px"></div>
+        <input id="coordinates" name="coordinates" class="form-control" value="" required>
+      </div>
+      <button class='btn btn-success'>submit</button>
+      
+  </form>
+</div>
+{% endblock %}
