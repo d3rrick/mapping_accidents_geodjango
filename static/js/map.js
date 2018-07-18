@@ -26,17 +26,17 @@ var ctlRouting;
 var animatedMarker;
 $(document).ready(function(){
     mymap = L.map('map', {center:[-1.300561, 36.784549], zoom:5, zoomControl:false, attributionControl:false});
-    // var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>';
+    var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>';
 
-    // var mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGVyeSIsImEiOiJjaWY5anJyN3YwMDI5dGNseHoyZzM4Z3R4In0.dToOXYIZ30LH_7VtFbKW4A';
+    var mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGVyeSIsImEiOiJjaWY5anJyN3YwMDI5dGNseHoyZzM4Z3R4In0.dToOXYIZ30LH_7VtFbKW4A';
 
-    // var base_layer = L.tileLayer(mbUrl, {
-    // id: 'mapbox.dark',
-    // attribution: mbAttr
-    // }).addTo(mymap);
-            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(mymap);
+    var base_layer = L.tileLayer(mbUrl, {
+    id: 'mapbox.dark',
+    attribution: mbAttr
+    }).addTo(mymap);
+            // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            // attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            // }).addTo(mymap);
 
     mymap.on('click', function(e){
         var x = e.latlng;
@@ -196,8 +196,8 @@ $(document).ready(function(){
       }).addTo(mymap);
 
         var waypoints =  [
-            L.latLng(-1.300561, 36.784549),
-            L.latLng(-1.3300561, 36.84549)
+            L.latLng(-1.300838,36.784675),
+            L.latLng(-1.292831,36.789042)
           ]
         
         ctlRouting = L.Routing.control({waypoints,
