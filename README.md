@@ -5,7 +5,7 @@ The Accidents application
 - Report accidents with location attribute
 
 
-By **Derrick** created on, May 19th 2018
+Created on, May 19th 2018
 
 [accident application demo ](https://www.youtube.com/watch?v=pM1moK0JSQc&t=30s "Accidents app")
 
