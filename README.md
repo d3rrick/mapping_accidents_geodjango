@@ -4,7 +4,7 @@
 
 - Report accidents with location attribute
 
-[![Accidents app](static/accidents.png| width=100)](https://www.youtube.com/watch?v=pM1moK0JSQc&t=30s "Accidents app")
+[accident application demo ](https://www.youtube.com/watch?v=pM1moK0JSQc&t=30s "Accidents app")
 
 ## Tools used
 + Django
